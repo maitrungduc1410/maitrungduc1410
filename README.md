@@ -1,6 +1,8 @@
 ## Hello World 👋
 
-<img src="./hello.gif">
+<div align="center">
+  <img width="300" src="./hello.gif">
+</div>
 
 <br />
 
@@ -8,8 +10,6 @@ Hi, Im [Duc Trung Mai (James)](https://jamesisme.com/), a passionate self-taught
 
 i am also an open-source enthusiast and maintainer. i learned a lot from the open-source community and i love how collaboration and knowledge sharing happened through open-source.
 
-
-<img align="right" alt="GIF" src="./dance.gif" width="500" height="320" />
 
 **Languages and tools:**  
 
@@ -24,12 +24,15 @@ i am also an open-source enthusiast and maintainer. i learned a lot from the ope
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"></code>
 <code><img height="20" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"></code>
 
+<div align="center">
+  <img alt="GIF" src="./dance.gif" width="500"/>
+</div>
 
 ### 📈 My github stats
 
-<div style="display: flex;">
-  <img src="https://github-readme-stats.vercel.app/api?username=maitrungduc1410&hide=contribs,prs&show_icons=true&bg_color=0,f5b161,ec366e&title_color=fff&text_color=fff&icon_color=fff" alt="Duc Trung Mai's GitHub stats" style="width: 70%" />
-  <img src="./digital.gif" style="width: 30%" />
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=maitrungduc1410&hide=contribs,prs&show_icons=true&bg_color=0,f5b161,ec366e&title_color=fff&text_color=fff&icon_color=fff" alt="Duc Trung Mai's GitHub stats" style="width: 60%" />
+  <img src="./digital.gif" style="width: 20%" />
 </div>
 
 
