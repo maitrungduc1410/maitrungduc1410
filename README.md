@@ -24,7 +24,7 @@ i am also an open-source enthusiast and maintainer. i learned a lot from the ope
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"></code>
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"></code>
 </div>
-
+<br />
 <div align="center">
   <img alt="GIF" src="./dance.gif" width="300"/>
 </div>
