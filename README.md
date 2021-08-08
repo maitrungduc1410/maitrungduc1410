@@ -23,12 +23,15 @@ i am also an open-source enthusiast and maintainer. i learned a lot from the ope
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/kubernetes/kubernetes.png"></code>
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/mysql/mysql.png"></code>
   <code><img height="40" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png"></code>
+</div>
+
+<div align="center">
   <img alt="GIF" src="./dance.gif" width="300"/>
 </div>
 
 ### 📈 My github stats
 
-<div align="center" style="align-items: center;">
+<div align="center">
   <img src="https://github-readme-stats.vercel.app/api?username=maitrungduc1410&hide=contribs,prs&show_icons=true&bg_color=0,f5b161,ec366e&title_color=fff&text_color=fff&icon_color=fff" alt="Duc Trung Mai's GitHub stats" width="400" />
 <img src="./digital.gif" width="150" />
 </div>
