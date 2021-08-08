@@ -1,7 +1,7 @@
 ## Hello World 👋
 
 <div align="center">
-  <img width="300" src="./hello.gif">
+  <img width="300" src="./hello.gif" style="border-radius:50%">
 </div>
 
 <br />
