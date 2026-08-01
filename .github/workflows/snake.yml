@@ -1,0 +1,83 @@
+# Regenerates the contribution-grid snake animation.
+#
+# The output is published to a dedicated orphan branch called `assets`, not to
+# the default branch. The branch is rebuilt from scratch and force-pushed on
+# every run, so it always holds exactly one commit: a year of regenerated SVGs
+# never enters the history of `master` - or of anything else.
+#
+# Resulting URLs to reference from the README:
+#   https://raw.githubusercontent.com/<owner>/<repo>/assets/snake.svg
+#   https://raw.githubusercontent.com/<owner>/<repo>/assets/snake-dark.svg
+# (branch `assets`, file `snake.svg` at the branch root.)
+#
+# Those URLs are absolute, so GitHub proxies them through Camo. That is fine
+# here: raw.githubusercontent.com serves .svg as image/svg+xml with
+# `cache-control: max-age=300`, which Camo accepts and revalidates against, and
+# the origin is GitHub itself rather than a third party that can disappear.
+
+name: Snake
+
+on:
+  schedule:
+    # 03:41 UTC daily, off the hour and after the profile refresh, so the two
+    # jobs do not contend for the same runner queue minute.
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+
+# Least privilege. Every permission not listed here is set to `none`.
+permissions:
+  contents: write
+
+concurrency:
+  group: snake
+  cancel-in-progress: false
+
+jobs:
+  snake:
+    runs-on: ubuntu-latest
+    steps:
+      # No checkout needed: this action reads the contribution calendar from
+      # the API and writes into the workspace. It does not read the repo.
+      #
+      # The `svg-only` variant is used rather than the top-level action: it is
+      # a plain Node action instead of a Docker one, so it skips the image
+      # pull, and SVG is all this profile needs.
+      - name: Generate contribution snake
+        uses: Platane/snk/svg-only@d8f6715049803e982ee5ff501b6b9b7d5deeb09b # v3.5.0
+        with:
+          github_user_name: ${{ github.repository_owner }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          outputs: |
+            dist/snake.svg?palette=github-light
+            dist/snake-dark.svg?palette=github-dark
+
+      - name: Publish to the orphan assets branch
+        env:
+          # Passed verbatim, with no encoding or transformation, so Actions'
+          # exact-match log redaction still covers it. Never derive a value
+          # from this (base64, substring) without an explicit ::add-mask::.
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # Set through the environment rather than `git config`: git's env
+          # vars beat every config file, so an ambient identity on the runner
+          # cannot end up as the commit author.
+          GIT_AUTHOR_NAME: "github-actions[bot]"
+          GIT_AUTHOR_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com"
+          GIT_COMMITTER_NAME: "github-actions[bot]"
+          GIT_COMMITTER_EMAIL: "41898282+github-actions[bot]@users.noreply.github.com"
+        run: |
+          set -euo pipefail
+
+          # Refuse to publish an empty or missing file over a good one.
+          test -s dist/snake.svg
+          test -s dist/snake-dark.svg
+
+          cd dist
+
+          # A brand-new repository rather than a branch off the checkout: this
+          # is what keeps the published branch at a single commit forever.
+          git init -q -b assets
+          git add -A
+          git commit -q -m "chore: regenerate contribution snake"
+
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push -f origin HEAD:assets

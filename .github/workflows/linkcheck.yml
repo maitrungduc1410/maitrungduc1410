@@ -1,0 +1,87 @@
+# Weekly link check for the rendered README, reported as a GitHub issue.
+#
+# This exists because GitHub never tells you when an image or link in your
+# profile rots. The previous version of this profile carried a broken stats
+# card for an unknown length of time and it was noticed by a person, not by a
+# system. A red cross on the Actions tab of a repo nobody visits notifies
+# nobody, so a failure is filed as an issue, which sends an email.
+#
+# It also covers the generated assets: the README references them by relative
+# path, so a missing assets/stats.svg or a snake branch that stopped updating
+# shows up here as a broken link.
+
+name: Link check
+
+on:
+  schedule:
+    # Mondays at 07:23 UTC. Off the hour, per the schedule-delay guidance.
+    - cron: "23 7 * * 1"
+  workflow_dispatch:
+
+# Least privilege: read the code, write issues. Nothing else.
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: linkcheck
+  cancel-in-progress: true
+
+jobs:
+  lychee:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Check links in README.md
+        id: lychee
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8 # v2.9.0
+        with:
+          # Do not fail here - the reporting steps below still need to run.
+          # The job is failed explicitly at the end instead.
+          fail: false
+          # If the README contains no links at all, the template render broke.
+          # That is worth being told about too.
+          failIfEmpty: true
+          output: lychee/out.md
+          # 429 is tolerated: being rate-limited is not the same as being
+          # broken, and a transient 429 should not open an issue. GitHub links
+          # are authenticated automatically by the action using GITHUB_TOKEN,
+          # so they do not hit the 60-requests-per-hour anonymous limit.
+          args: >-
+            --no-progress
+            --max-retries 3
+            --accept '200..=299, 429'
+            README.md
+
+      # Reuse one issue instead of filing a fresh one every week. Unattended
+      # monitoring that spams gets muted, and muted monitoring is worthless.
+      - name: Look for an existing open report
+        id: existing
+        if: steps.lychee.outputs.exit_code != 0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          # Matched on title rather than label so this cannot fail on a repo
+          # where the label has not been created yet.
+          number=$(gh issue list --state open --limit 50 --json number,title \
+            --jq '[.[] | select(.title == "Broken links in README.md")] | .[0].number // empty' \
+            2>/dev/null || true)
+          echo "number=${number}" >> "$GITHUB_OUTPUT"
+
+      - name: Open or update the link-rot report
+        if: steps.lychee.outputs.exit_code != 0
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6.0.0
+        with:
+          title: "Broken links in README.md"
+          content-filepath: lychee/out.md
+          # Empty means "create a new issue"; a number means "update that one".
+          issue-number: ${{ steps.existing.outputs.number }}
+          labels: link-rot
+
+      - name: Fail the job
+        if: steps.lychee.outputs.exit_code != 0
+        run: |
+          echo "::error::Lychee found broken links in README.md - see the issue it just filed."
+          exit 1

@@ -1,0 +1,28 @@
+# Keeps the SHA-pinned actions in .github/workflows current.
+#
+# Pinning to a commit SHA and staying up to date are not in tension: Dependabot
+# understands SHA pins and bumps the SHA together with the trailing version
+# comment, so the workflows keep immutable references without going stale.
+
+version: 2
+
+updates:
+  - package-ecosystem: "github-actions"
+    # "/" is correct for Actions - it means .github/workflows, not the repo root.
+    directory: "/"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "07:00"
+    # One grouped pull request a week rather than one per action. This is a
+    # profile repo with four workflows; a stream of separate PRs would just
+    # get ignored, and ignored updates are the thing pinning is meant to avoid.
+    groups:
+      actions:
+        patterns:
+          - "*"
+    open-pull-requests-limit: 5
+    commit-message:
+      prefix: "chore"
+    labels:
+      - "dependencies"
