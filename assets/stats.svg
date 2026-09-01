@@ -9,7 +9,7 @@
         aria-labelledby="descId"
       >
         <title id="titleId">Duc Trung Mai&#39;s GitHub Stats, Rank: A-</title>
-        <desc id="descId">Total Stars Earned: 1185, Total Commits  (last year) : 671, Total Issues: 82</desc>
+        <desc id="descId">Total Stars Earned: 1186, Total Commits  (last year) : 671, Total Issues: 82</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 89.79290968309022;
+        stroke-dashoffset: 89.78874150149919;
       }
     }
   
