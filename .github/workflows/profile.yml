@@ -59,7 +59,7 @@ jobs:
       # The shared instance previously used by this profile returns
       # 503 DEPLOYMENT_PAUSED, and upstream now recommends this action.
       - name: Generate stats card
-        uses: stats-organization/github-readme-stats-action@e856fc8de9d7729b463c468911e232cfbdc3d55e # v2.0.2
+        uses: stats-organization/github-readme-stats-action@2c498845f71017821efaad14293ebc736156ef21 # v2.1.0
         with:
           card: stats
           # theme=transparent rather than the previous orange/pink gradient:
@@ -141,7 +141,7 @@ jobs:
       # <!--END_SECTION:blog--> in place, leaving the rest of the file alone.
       - name: Inject latest blog posts
         if: steps.feed.outputs.usable == 'true'
-        uses: gautamkrishnar/blog-post-workflow@2786e54a01b71aec80a5118c2bd6b5044e842597 # v1.9.6
+        uses: gautamkrishnar/blog-post-workflow@f177491c77670f150ab4e9b9890254d8eba4164b # v1.9.7
         with:
           feed_list: ${{ env.BLOG_FEED_URL }}
           readme_path: "./README.md"
