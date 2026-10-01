@@ -498,24 +498,23 @@ const MOTIFS = {
     );
   },
 
-  splash(s, c) {
-    const P = 3.6;
-    const mark = 'M0,-10 C1.6,-2.4 2.4,-1.6 10,0 C2.4,1.6 1.6,2.4 0,10 C-1.6,2.4 -2.4,1.6 -10,0 C-2.4,-1.6 -1.6,-2.4 0,-10Z';
-    const grow = s.anim(
-      kf([[0, 'transform:scale(1)'], [25, 'transform:scale(1)'], [33, 'transform:scale(.8);animation-timing-function:cubic-bezier(.7,0,.9,.4)'], [55, 'transform:scale(16)'], [88, 'transform:scale(16)'], [89, 'transform:scale(1)'], [100, 'transform:scale(1)']]),
-      `${P}s linear infinite`,
-    );
-    const cover = s.anim(kf([[0, 'opacity:1'], [88, 'opacity:1'], [88.5, 'opacity:0'], [92, 'opacity:0'], [100, 'opacity:1']]), `${P}s linear infinite`);
-    const logo = s.anim(kf([[0, 'opacity:1'], [33, 'opacity:1'], [40, 'opacity:0'], [92, 'opacity:0'], [100, 'opacity:1']]), `${P}s linear infinite`);
+  record(s, c) {
+    const rec = '#ff6b6b';
+    const pattern = Array.from({ length: 20 }, (_, i) => n2(6 + 34 * Math.abs(Math.sin(i * 0.9) * Math.sin(i * 0.37 + 1)) + 4 * Math.abs(Math.cos(i * 2.1))));
+    const bars = [...pattern, ...pattern].map((h, i) => `<rect x="${1 + i * 5}" y="${n2(50 - h / 2)}" width="3" height="${h}" rx="1.5"/>`).join('');
+    const scroll = s.anim('from{transform:none}to{transform:translateX(-100px)}', '4s linear infinite');
+    const pulse = s.anim('0%,100%{opacity:1}50%{opacity:.25}', '1.2s ease-in-out infinite');
     s.def(
-      `<mask id="hole" maskUnits="userSpaceOnUse" x="36" y="8" width="48" height="102"><rect x="36" y="8" width="48" height="102" fill="#fff"/><g transform="translate(60 59)"><path class="fb ${grow}" d="${mark}" fill="#000"/></g></mask>`,
+      `<linearGradient id="fadeIn" x1="0" y1="0" x2="34" y2="0" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fff" stop-opacity="0"/><stop offset="1" stop-color="#fff"/></linearGradient>` +
+        `<mask id="window" maskUnits="userSpaceOnUse" x="0" y="0" width="120" height="100"><rect x="0" y="8" width="101" height="84" fill="url(#fadeIn)"/></mask>`,
     );
     return (
-      `<rect x="32" y="4" width="56" height="110" rx="11" fill="${C.bg2}" stroke="${C.line2}"/>` +
-      `<rect x="36" y="8" width="48" height="102" rx="8" fill="${C.term}"/>` +
-      `<g fill="#252c3b"><rect x="40" y="14" width="40" height="8" rx="2"/><circle cx="45" cy="34" r="4"/><rect x="52" y="31" width="26" height="3" rx="1.5"/><rect x="52" y="36" width="18" height="3" rx="1.5"/><circle cx="45" cy="50" r="4"/><rect x="52" y="47" width="24" height="3" rx="1.5"/><rect x="52" y="52" width="20" height="3" rx="1.5"/><rect x="40" y="62" width="40" height="30" rx="4"/><circle cx="45" cy="102" r="4"/><rect x="52" y="99" width="22" height="3" rx="1.5"/></g>` +
-      `<g class="${cover}"><rect x="36" y="8" width="48" height="102" rx="8" fill="${c}" mask="url(#hole)"/></g>` +
-      `<g transform="translate(60 59)"><g class="${logo}"><path class="fb ${grow}" d="${mark}" fill="#fff"/></g></g>`
+      `<line x1="0" y1="50" x2="101" y2="50" stroke="${C.line2}" stroke-dasharray="2 3"/>` +
+      `<g mask="url(#window)"><g class="${scroll}" fill="${c}">${bars}</g></g>` +
+      `<line x1="104" y1="16" x2="104" y2="84" stroke="${rec}" stroke-width="1.5"/><circle cx="104" cy="16" r="3" fill="${rec}"/>` +
+      `<circle class="${pulse}" cx="5" cy="102" r="4.5" fill="${rec}"/>` +
+      s.text('mono', 15, 106, 'REC', `font-size="10" font-weight="600" fill="${rec}"`) +
+      s.text('mono', 120, 106, '0:07', `text-anchor="end" font-size="10" fill="${C.ink3}"`)
     );
   },
 

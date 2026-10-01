@@ -56,10 +56,10 @@ export const CARDS = [
     lines: ['An audio waveform you can play', 'and scrub, native on iOS and', 'Android.'],
   },
   {
-    repo: 'react-native-motion-splash',
+    repo: 'react-native-waveform-recorder',
     layer: 2,
-    motif: 'splash',
-    lines: ['Twitter’s animated splash reveal,', 'rebuilt natively for React Native:', 'the logo zooms into the app.'],
+    motif: 'record',
+    lines: ['A high-performance audio recorder', 'for React Native, with a native', 'waveform that moves as you speak.'],
   },
   {
     repo: 'socket.io-mesh-adapter',
@@ -91,7 +91,7 @@ export const CARDS = [
 export const VIVARI = {
   repo: 'vivari',
   layer: 3,
-  lines: ['Node, Bun and Python running inside your browser tab. Real npm installs,', 'real dev servers with hot reload, and no server anywhere doing the work.'],
+  lines: ['Run Node, Bun and Python directly in your browser. No server, no install:', 'real npm packages and real dev servers, running entirely inside the tab.'],
   terminal: [
     { cmd: 'npm install' },
     { out: 'added 214 packages in 3.1s' },

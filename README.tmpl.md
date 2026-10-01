@@ -46,7 +46,7 @@ Swift and Kotlin on React Native's New Architecture, with no animation on the JS
   <a href="https://github.com/maitrungduc1410/react-native-shared-hero"><img src="./assets/card-react-native-shared-hero.svg" width="410" alt="react-native-shared-hero: native shared-element transitions for React Native."></a>
   <a href="https://github.com/maitrungduc1410/react-native-signature-ink"><img src="./assets/card-react-native-signature-ink.svg" width="410" alt="react-native-signature-ink: true-native signature capture for React Native."></a>
   <a href="https://github.com/maitrungduc1410/react-native-waveform-player"><img src="./assets/card-react-native-waveform-player.svg" width="410" alt="react-native-waveform-player: a native audio waveform you can play and scrub."></a>
-  <a href="https://github.com/maitrungduc1410/react-native-motion-splash"><img src="./assets/card-react-native-motion-splash.svg" width="410" alt="react-native-motion-splash: Twitter's animated splash reveal, rebuilt natively."></a>
+  <a href="https://github.com/maitrungduc1410/react-native-waveform-recorder"><img src="./assets/card-react-native-waveform-recorder.svg" width="410" alt="react-native-waveform-recorder: a high-performance audio recorder with a native live waveform."></a>
 </p>
 
 <details>
@@ -56,7 +56,6 @@ Swift and Kotlin on React Native's New Architecture, with no animation on the JS
 
 | Module | What it does | Stars | Installs / month |
 | --- | --- | --: | --: |
-| [react-native-waveform-recorder](https://github.com/maitrungduc1410/react-native-waveform-recorder) | Audio recorder with a native live waveform. | {{stars:react-native-waveform-recorder}} | {{installs:react-native-waveform-recorder}} |
 | [react-native-zalo-kit](https://github.com/maitrungduc1410/react-native-zalo-kit) | The Zalo SDK for React Native. | {{stars:react-native-zalo-kit}} | {{installs:react-native-zalo-kit}} |
 | [react-native-pointer-location](https://github.com/maitrungduc1410/react-native-pointer-location) | Android's pointer-location developer overlay, as a module. | {{stars:react-native-pointer-location}} | {{installs:react-native-pointer-location}} |
 | [react-native-new-feature](https://github.com/maitrungduc1410/react-native-new-feature) | A lightweight "What's New" screen for your app. | {{stars:react-native-new-feature}} | {{installs:react-native-new-feature}} |
@@ -72,7 +71,7 @@ Swift and Kotlin on React Native's New Architecture, with no animation on the JS
 
 Below the framework there is a runtime, and below the runtime there are syscalls, memory and wires. Boot the first one on [vivari.run](https://vivari.run).
 
-<a href="https://github.com/maitrungduc1410/vivari"><img src="./assets/vivari.svg" width="100%" alt="vivari: Node, Bun and Python running inside your browser tab, with real npm installs and real dev servers and no server doing the work."></a>
+<a href="https://github.com/maitrungduc1410/vivari"><img src="./assets/vivari.svg" width="100%" alt="vivari: run Node, Bun and Python directly in your browser, with no server and no install."></a>
 
 <p align="center">
   <a href="https://github.com/maitrungduc1410/socket.io-mesh-adapter"><img src="./assets/card-socket.io-mesh-adapter.svg" width="410" alt="socket.io-mesh-adapter: Socket.IO pods talking in a mesh, with zero broker hops."></a>
