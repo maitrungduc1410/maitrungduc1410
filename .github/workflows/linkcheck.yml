@@ -7,7 +7,7 @@
 # nobody, so a failure is filed as an issue, which sends an email.
 #
 # It also covers the generated assets: the README references them by relative
-# path, so a missing assets/stats.svg or a snake branch that stopped updating
+# path, so a missing assets/numbers.svg or a snake branch that stopped updating
 # shows up here as a broken link.
 
 name: Link check

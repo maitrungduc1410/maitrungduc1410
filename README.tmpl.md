@@ -1,70 +1,109 @@
-<!-- Source of truth for the profile README. README.md is generated from this file. Edit here, not there. -->
+<!-- Source of truth for the profile README. scripts/render.mjs turns this into README.md and draws everything in assets/. Edit here, not there. -->
 
-<div align="center">
-  <img src="./assets/hero.svg" width="820" alt="Duc Trung Mai, a self-taught fullstack web developer and open-source maintainer. Vietnamese, based in Singapore, building at TikTok.">
-</div>
-
-<h1 align="center">Hi, I'm James 👋</h1>
+<a href="https://ducmai.me"><img src="./assets/hero.svg" width="100%" alt="Duc Mai: I work one layer below. Software engineer at TikTok Search in Singapore, working on native, runtime and rendering."></a>
 
 <p align="center">
-  <em>I like dreaming up ideas and making them real behind elegant interfaces.</em>
+  <a href="#l0--surface"><img src="./assets/nav-l0.svg" width="160" alt="L0 Surface"></a>
+  <a href="#l1--now"><img src="./assets/nav-l1.svg" width="160" alt="L1 Now"></a>
+  <a href="#l2--native"><img src="./assets/nav-l2.svg" width="160" alt="L2 Native"></a>
+  <a href="#l3--runtime"><img src="./assets/nav-l3.svg" width="160" alt="L3 Runtime"></a>
+  <a href="#l4--rendering"><img src="./assets/nav-l4.svg" width="160" alt="L4 Rendering"></a>
 </p>
 
 <p align="center">
-  <a href="https://jamesisme.com/"><img src="https://img.shields.io/badge/Website-jamesisme.com-0969DA?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Personal website: jamesisme.com"></a>
-  <a href="https://viblo.asia/u/maitrungduc1410"><img src="https://img.shields.io/badge/Viblo-Articles-5DB6E6?style=for-the-badge&logo=readthedocs&logoColor=white" alt="Articles on Viblo"></a>
-  <a href="https://www.linkedin.com/in/maitrungduc1410"><img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn profile"></a>
-  <a href="https://x.com/maitrungduc1410"><img src="https://img.shields.io/badge/X-@maitrungduc1410-000000?style=for-the-badge&logo=x&logoColor=white" alt="X profile: @maitrungduc1410"></a>
-  <a href="https://github.com/maitrungduc1410?tab=followers"><img src="https://img.shields.io/github/followers/maitrungduc1410?style=for-the-badge&logo=github&label=Followers&labelColor=181717&color=0969DA" alt="GitHub follower count"></a>
+  <a href="https://ducmai.me">ducmai.me</a> ·
+  <a href="https://www.linkedin.com/in/maitrungduc1410">LinkedIn</a> ·
+  <a href="https://x.com/maitrungduc1410">X</a> ·
+  <a href="https://viblo.asia/u/maitrungduc1410">Viblo</a> ·
+  <a href="mailto:maitrungduc1410@gmail.com">Email</a>
 </p>
+
+## L0 · Surface
+
+Some behaviour only feels possible inside a big native app: hero transitions, waveform scrubbing, frame-accurate video editing, a Node runtime with no server. I build that behaviour one layer below where product code usually stops, and ship it as open source.
+
+<img src="./assets/numbers.svg" width="100%" alt="By the numbers: npm installs a month across my packages, GitHub stars on these projects, GitHub followers, and article views on Viblo.">
+
+<sub>As of {{asOf}}, from the public GitHub, npm and Viblo APIs. <a href="#l1--now">↓ One layer down: L1 · Now</a></sub>
+
+## L1 · Now
+
+Since February 2024 I have worked on client performance for TikTok Search in Singapore: how fast the first screen appears, how smoothly results scroll, and what the image and video pipeline costs inside a very large iOS and Android app. I can describe the discipline; the numbers stay inside, which is why everything below is my own code.
+
+A lot of that work sits on [Lynx](https://lynxjs.org), and a regression rarely lives in one layer: the job is following it from a component, across the bridge, into Kotlin or Swift, and down to the frame that dropped. I also run AI agents like a small team, with the guardrails doing the real work.
+
+<img src="./assets/loop.svg" width="100%" alt="The agent loop: plan, build, review, verify, and around again. Every step leaves an artefact the next one can check.">
+
+<sub><a href="#l2--native">↓ One layer down: L2 · Native</a></sub>
+
+## L2 · Native
+
+Swift and Kotlin on React Native's New Architecture, with no animation on the JS thread. All of them are still maintained, which is the part most side projects fail.
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=js,ts,vue,react,angular,nodejs,graphql,docker,kubernetes,mysql" alt="Tools I work with: JavaScript, TypeScript, Vue, React, Angular, Node.js, GraphQL, Docker, Kubernetes, MySQL">
+  <a href="https://github.com/maitrungduc1410/react-native-video-trim"><img src="./assets/card-react-native-video-trim.svg" width="410" alt="react-native-video-trim: frame-accurate video trimming for React Native."></a>
+  <a href="https://github.com/maitrungduc1410/react-native-loader-kit"><img src="./assets/card-react-native-loader-kit.svg" width="410" alt="react-native-loader-kit: 30+ native loading indicators for React Native."></a>
+  <a href="https://github.com/maitrungduc1410/react-native-shared-hero"><img src="./assets/card-react-native-shared-hero.svg" width="410" alt="react-native-shared-hero: native shared-element transitions for React Native."></a>
+  <a href="https://github.com/maitrungduc1410/react-native-signature-ink"><img src="./assets/card-react-native-signature-ink.svg" width="410" alt="react-native-signature-ink: true-native signature capture for React Native."></a>
+  <a href="https://github.com/maitrungduc1410/react-native-waveform-player"><img src="./assets/card-react-native-waveform-player.svg" width="410" alt="react-native-waveform-player: a native audio waveform you can play and scrub."></a>
+  <a href="https://github.com/maitrungduc1410/react-native-motion-splash"><img src="./assets/card-react-native-motion-splash.svg" width="410" alt="react-native-motion-splash: Twitter's animated splash reveal, rebuilt natively."></a>
 </p>
-
-> [!NOTE]
-> Most of my open-source work is React Native and Node.js libraries. Issues and pull requests are genuinely welcome, and I read all of them.
-
-## About me
-
-I'm a self-taught fullstack web developer from Vietnam, based in Singapore and building at TikTok.
-
-I care a lot about the experience, the architecture, and the code quality of the things I build. A feature that works but is painful to use or maintain isn't finished yet.
-
-I'm also an open-source enthusiast and maintainer. I learned most of what I know from the open-source community, and I love how collaboration and knowledge sharing happen out in the open.
 
 <details>
-<summary>A bit more on how I work</summary>
+<summary>The rest of the family</summary>
 
 <br>
 
-Most of my libraries started as something I needed on a real project and couldn't find, so the design bias is always toward the smallest API that solves the actual problem. I try to keep native modules genuinely native rather than wrapping a web view, keep dependencies few, and keep the README good enough that nobody has to read the source to get started.
-
-I work across the stack: Vue and React on the front, Node.js and PHP services behind them, Docker and Kubernetes underneath. I enjoy the parts where those layers meet.
+| Module | What it does | Stars | Installs / month |
+| --- | --- | --: | --: |
+| [react-native-waveform-recorder](https://github.com/maitrungduc1410/react-native-waveform-recorder) | Audio recorder with a native live waveform. | {{stars:react-native-waveform-recorder}} | {{installs:react-native-waveform-recorder}} |
+| [react-native-zalo-kit](https://github.com/maitrungduc1410/react-native-zalo-kit) | The Zalo SDK for React Native. | {{stars:react-native-zalo-kit}} | {{installs:react-native-zalo-kit}} |
+| [react-native-pointer-location](https://github.com/maitrungduc1410/react-native-pointer-location) | Android's pointer-location developer overlay, as a module. | {{stars:react-native-pointer-location}} | {{installs:react-native-pointer-location}} |
+| [react-native-new-feature](https://github.com/maitrungduc1410/react-native-new-feature) | A lightweight "What's New" screen for your app. | {{stars:react-native-new-feature}} | {{installs:react-native-new-feature}} |
+| [react-native-textflow](https://github.com/maitrungduc1410/react-native-textflow) | Native fluid text reflow. | {{stars:react-native-textflow}} | {{installs:react-native-textflow}} |
+| [react-native-tooltipster](https://github.com/maitrungduc1410/react-native-tooltipster) | Truly native tooltips. | {{stars:react-native-tooltipster}} | {{installs:react-native-tooltipster}} |
+| [ffmpeg-kit](https://github.com/maitrungduc1410/ffmpeg-kit) | A community-maintained rebuild of ffmpeg-kit for Android, iOS and React Native, with 16 KB page support. | | |
 
 </details>
 
-## Selected open-source work
+<sub><a href="#l3--runtime">↓ One layer down: L3 · Runtime</a></sub>
 
-A few projects I maintain. Star counts are live.
+## L3 · Runtime
 
-| Project | What it is | Stars |
-| --- | --- | --- |
-| **[vivari](https://github.com/maitrungduc1410/vivari)** | An open-source, MIT-licensed WebContainer. Runs Node projects like Vite and Express entirely in the browser, with no server. | <img src="https://img.shields.io/github/stars/maitrungduc1410/vivari?style=flat-square&labelColor=181717&color=0969DA" alt="Star count for vivari"> |
-| **[react-native-loader-kit](https://github.com/maitrungduc1410/react-native-loader-kit)** | Beautiful native loading indicators for React Native, with 30+ animations and speed control. | <img src="https://img.shields.io/github/stars/maitrungduc1410/react-native-loader-kit?style=flat-square&labelColor=181717&color=0969DA" alt="Star count for react-native-loader-kit"> |
-| **[react-native-video-trim](https://github.com/maitrungduc1410/react-native-video-trim)** | A native video trimmer for React Native apps. | <img src="https://img.shields.io/github/stars/maitrungduc1410/react-native-video-trim?style=flat-square&labelColor=181717&color=0969DA" alt="Star count for react-native-video-trim"> |
-| **[node-scp-async](https://github.com/maitrungduc1410/node-scp-async)** | Lightweight, fast and secure SCP functions for Node.js. | <img src="https://img.shields.io/github/stars/maitrungduc1410/node-scp-async?style=flat-square&labelColor=181717&color=0969DA" alt="Star count for node-scp-async"> |
-| **[WebRTC-Demo](https://github.com/maitrungduc1410/WebRTC-Demo)** | A working WebRTC demo across web, Android and iOS. | <img src="https://img.shields.io/github/stars/maitrungduc1410/WebRTC-Demo?style=flat-square&labelColor=181717&color=0969DA" alt="Star count for WebRTC-Demo"> |
+Below the framework there is a runtime, and below the runtime there are syscalls, memory and wires. Boot the first one on [vivari.run](https://vivari.run).
+
+<a href="https://github.com/maitrungduc1410/vivari"><img src="./assets/vivari.svg" width="100%" alt="vivari: Node, Bun and Python running inside your browser tab, with real npm installs and real dev servers and no server doing the work."></a>
+
+<p align="center">
+  <a href="https://github.com/maitrungduc1410/socket.io-mesh-adapter"><img src="./assets/card-socket.io-mesh-adapter.svg" width="410" alt="socket.io-mesh-adapter: Socket.IO pods talking in a mesh, with zero broker hops."></a>
+  <a href="https://github.com/maitrungduc1410/node-scp-async"><img src="./assets/card-node-scp-async.svg" width="410" alt="node-scp-async: a promise-based SCP client for Node.js."></a>
+</p>
+
+<sub><a href="#l4--rendering">↓ One layer down: L4 · Rendering</a></sub>
+
+## L4 · Rendering
+
+The bottom of the stack: frame budgets, vsync, and what actually gets redrawn.
+
+<p align="center">
+  <a href="https://github.com/maitrungduc1410/konva-inspector"><img src="./assets/card-konva-inspector.svg" width="410" alt="konva-inspector: React DevTools for canvas apps, with a render heatmap."></a>
+  <a href="https://github.com/maitrungduc1410/double-raf-demo"><img src="./assets/card-double-raf-demo.svg" width="410" alt="double-raf-demo: why one requestAnimationFrame is not enough."></a>
+</p>
+
 <details>
-<summary>Also in the workshop</summary>
+<summary>The lab: famous behaviours, rebuilt from first principles</summary>
 
 <br>
 
-- **[react-native-zalo-kit](https://github.com/maitrungduc1410/react-native-zalo-kit)**: Zalo SDK implementation for React Native.
-- **[konva-inspector](https://github.com/maitrungduc1410/konva-inspector)**: a browser extension for debugging Konva apps.
-- **[react-native-shared-hero](https://github.com/maitrungduc1410/react-native-shared-hero)**: native shared-element transitions for React Native, router-agnostic.
-- **[react-native-signature-ink](https://github.com/maitrungduc1410/react-native-signature-ink)**: true-native signature capture for React Native.
-- **[docker-laravel-horizon-load-balancing](https://github.com/maitrungduc1410/docker-laravel-horizon-load-balancing)**: a reference setup for running Laravel on Docker with queues, Horizon, Redis and HAProxy.
+- **[youtube-heatmap](https://github.com/maitrungduc1410/youtube-heatmap)**: YouTube's "most replayed" heatmap above the scrubber.
+- **[youtube-video-preview](https://github.com/maitrungduc1410/youtube-video-preview)**: hover-to-preview thumbnails, the YouTube way.
+- **[youtube-smooth-progressbar](https://github.com/maitrungduc1410/youtube-smooth-progressbar)**: a progress bar that stays smooth between time updates.
+- **[InstagramImageGallery](https://github.com/maitrungduc1410/InstagramImageGallery)**: Instagram's pinch, pan and paging image gallery.
+- **[iOSCompass](https://github.com/maitrungduc1410/iOSCompass)**: the iOS Compass app, dial and haptics included.
+- **[HardwareVideoDemo](https://github.com/maitrungduc1410/HardwareVideoDemo)**: blocking screen recording of hardware-rendered video, the way Netflix does it.
+- **[twitter-hacking](https://github.com/maitrungduc1410/twitter-hacking)**: taking apart Twitter's view-source prevention.
+- **[devtools-frontend-demo](https://github.com/maitrungduc1410/devtools-frontend-demo)**: Chrome's own DevTools frontend, driven over Chobitsu.
+- **[wasm-hybrid-build](https://github.com/maitrungduc1410/wasm-hybrid-build)**: one C codebase, a hybrid WebAssembly build.
 
 Everything else lives on my [repositories page](https://github.com/maitrungduc1410?tab=repositories).
 
@@ -72,15 +111,24 @@ Everything else lives on my [repositories page](https://github.com/maitrungduc14
 
 ## Writing
 
+A million article views on [Viblo](https://viblo.asia/u/maitrungduc1410), none of it in English. It is an archive rather than a current signal: Docker, Kubernetes, micro-frontends and Vue, which is how a lot of Vietnamese developers first met those tools.
+
 <!--START_SECTION:blog-->
 - [Read my latest articles on Viblo →](https://viblo.asia/u/maitrungduc1410)
 <!--END_SECTION:blog-->
 
-## GitHub
+## Say hello
 
-<div align="center">
-  <img src="./assets/stats.svg" width="450" alt="GitHub statistics for maitrungduc1410: total stars, commits and issues across public repositories.">
-</div>
+Working on browser runtimes, React Native internals, or something that has to hold at scale? [Email me](mailto:maitrungduc1410@gmail.com) or find me on [LinkedIn](https://www.linkedin.com/in/maitrungduc1410).
+
+<details>
+<summary><code>$ sudo hire me</code></summary>
+
+<br>
+
+<img src="./assets/terminal.svg" width="100%" alt="A replay of the ducmai.me terminal: whoami, layers, and sudo hire me, which opens an email to maitrungduc1410@gmail.com.">
+
+</details>
 
 <details>
 <summary>Watch a snake eat my contribution graph</summary>
@@ -97,16 +145,16 @@ Everything else lives on my [repositories page](https://github.com/maitrungduc14
 </details>
 
 <details>
-<summary>How this page stays current</summary>
+<summary>How this page is made</summary>
 
 <br>
 
-The hero above is a hand-written SVG: under 5 KB, animated with CSS, and it adapts to your GitHub theme on its own. It replaced a 5.9 MB animated GIF.
+Every image here is an SVG drawn by [`scripts/render.mjs`](scripts/render.mjs): no GIFs, no JavaScript, no image service. Motion is CSS keyframes, the Geist font is subset to the exact characters each image uses and inlined, and with reduced motion turned on everything rests on its final frame.
 
-`README.md` is generated from `README.tmpl.md`, so edits belong in the template. The stats card and the contribution snake are regenerated on a schedule and committed into this repo rather than fetched live, so the main visuals keep working even when the services that used to draw them don't.
+The numbers come from the same public snapshot that [ducmai.me](https://ducmai.me) refreshes every week. A scheduled workflow re-renders the images and this README from `README.tmpl.md` and commits the result, so nothing on this page depends on a third-party server when you view it.
 
 </details>
 
 <p align="center">
-  <sub>Thanks for stopping by · <a href="https://jamesisme.com/">jamesisme.com</a></sub>
+  <sub><a href="#l0--surface">↑ Back to the surface</a> · <a href="https://ducmai.me">ducmai.me</a></sub>
 </p>
