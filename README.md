@@ -27,7 +27,7 @@ Some behaviour only feels possible inside a big native app: hero transitions, wa
 
 <img src="./assets/numbers.svg" width="100%" alt="By the numbers: npm installs a month across my packages, GitHub stars on these projects, GitHub followers, and article views on Viblo.">
 
-<sub>As of 2026-11-02, from the public GitHub, npm and Viblo APIs. <a href="#l1--now">↓ One layer down: L1 · Now</a></sub>
+<sub>As of 2026-11-09, from the public GitHub, npm and Viblo APIs. <a href="#l1--now">↓ One layer down: L1 · Now</a></sub>
 
 ## L1 · Now
 
@@ -59,11 +59,11 @@ Swift and Kotlin on React Native's New Architecture, with no animation on the JS
 
 | Module | What it does | Stars | Installs / month |
 | --- | --- | --: | --: |
-| [react-native-zalo-kit](https://github.com/maitrungduc1410/react-native-zalo-kit) | The Zalo SDK for React Native. | 58 | 778 |
-| [react-native-pointer-location](https://github.com/maitrungduc1410/react-native-pointer-location) | Android's pointer-location developer overlay, as a module. | 3 | 2k |
-| [react-native-new-feature](https://github.com/maitrungduc1410/react-native-new-feature) | A lightweight "What's New" screen for your app. | 20 | 94 |
-| [react-native-textflow](https://github.com/maitrungduc1410/react-native-textflow) | Native fluid text reflow. | 4 | 11 |
-| [react-native-tooltipster](https://github.com/maitrungduc1410/react-native-tooltipster) | Truly native tooltips. | 3 | 90 |
+| [react-native-zalo-kit](https://github.com/maitrungduc1410/react-native-zalo-kit) | The Zalo SDK for React Native. | 58 | 895 |
+| [react-native-pointer-location](https://github.com/maitrungduc1410/react-native-pointer-location) | Android's pointer-location developer overlay, as a module. | 3 | 2.5k |
+| [react-native-new-feature](https://github.com/maitrungduc1410/react-native-new-feature) | A lightweight "What's New" screen for your app. | 20 | 103 |
+| [react-native-textflow](https://github.com/maitrungduc1410/react-native-textflow) | Native fluid text reflow. | 4 | 18 |
+| [react-native-tooltipster](https://github.com/maitrungduc1410/react-native-tooltipster) | Truly native tooltips. | 3 | 123 |
 | [ffmpeg-kit](https://github.com/maitrungduc1410/ffmpeg-kit) | A community-maintained rebuild of ffmpeg-kit for Android, iOS and React Native, with 16 KB page support. | | |
 
 </details>
